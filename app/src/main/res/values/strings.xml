@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">清理App</string>
+
+    <string name="tab_cleaner">清理</string>
+    <string name="tab_slimming">手机瘦身</string>
+    <string name="tab_video">快手视频</string>
+    <string name="tab_mine">我的</string>
+
+</resources>

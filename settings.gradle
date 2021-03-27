@@ -1,0 +1,3 @@
+include ':libcom'
+include ':app'
+rootProject.name = "AppCleaner"

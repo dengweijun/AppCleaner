@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+def cfg = rootProject.ext
+
+android {
+    compileSdkVersion cfg.android.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.ben.appcleaner"
+        minSdkVersion cfg.android.minSdkVersion
+        targetSdkVersion cfg.android.targetSdkVersion
+        versionCode cfg.android.versionCode
+        versionName cfg.android.versionName
+
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    android.buildFeatures.dataBinding = true
+}
+
+dependencies {
+
+    implementation cfg.library.HiltLifeCycle
+    kapt cfg.library.HiltLifeCycleCompiler
+
+    implementation cfg.library.Glide
+    kapt cfg.library.GlideCompiler
+
+    implementation cfg.library.Hilt
+    kapt cfg.library.HiltCompiler
+
+    implementation project(':libcom')
+}

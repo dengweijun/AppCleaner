@@ -1,0 +1,70 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.ben.appcleaner.cleaner.viewmodel.CleanerViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <RadioGroup
+                android:id="@+id/rg_tab"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp54"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_cleaner"
+                    style="@style/tab_main_style"
+                    android:drawableTop="@drawable/tab_cleaner_selector"
+                    android:text="@string/tab_cleaner" />
+
+                <RadioButton
+                    android:id="@+id/rb_slimming"
+                    style="@style/tab_main_style"
+                    android:drawableTop="@drawable/tab_slimming_selector"
+                    android:text="@string/tab_slimming" />
+
+                <RadioButton
+                    android:id="@+id/rb_video"
+                    style="@style/tab_main_style"
+                    android:drawableTop="@drawable/tab_video_selector"
+                    android:text="@string/tab_video" />
+
+                <RadioButton
+                    android:id="@+id/rb_mine"
+                    style="@style/tab_main_style"
+                    android:drawableTop="@drawable/tab_mine_selector"
+                    android:text="@string/tab_mine" />
+
+            </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_DCDCDC" />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
